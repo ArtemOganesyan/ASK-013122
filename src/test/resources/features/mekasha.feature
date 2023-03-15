@@ -1,1 +1,1 @@
-# This is my first cool feature file
+# This is my first cool feature
