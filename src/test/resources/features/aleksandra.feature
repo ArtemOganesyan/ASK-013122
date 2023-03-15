@@ -12,6 +12,4 @@
 
 #    Have Fun, Guys!
 
-#@aleksandra-feature
-#Feature: Aleksandra Ask Tests - Passed Textual Quiz - E2E (positive)
-#
+
