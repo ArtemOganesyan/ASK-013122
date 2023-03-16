@@ -1,6 +1,6 @@
 #    Feature Description:
 
-#    The whole Feature runs successfully with all 8 scenarios and 178 steps:
+#    The whole Feature runs successfully with all 8 scenarios and 181 steps:
 
 #    1. Teacher - Create Textual Quiz
 #    2. Common - Register New User
@@ -11,9 +11,9 @@
 #    7. Teacher - Delete Quiz (found by Title)
 #    8. Teacher - Delete User (found by Name)
 
-#    Have Fun, Guys!
+#  PLEASE DELETE USER AND QUIZ: it is done by Scenarios 7 and 8
 
-#  PLEASE DELETE USER AND QUIZ after running tests: Scenarios 7 and 8
+#    Have Fun, Guys!
 
 @ask-alexa-feature
 Feature: Alexa's Ask Tests - Passed Textual Quiz - E2E (positive)
@@ -88,7 +88,7 @@ Feature: Alexa's Ask Tests - Passed Textual Quiz - E2E (positive)
     Then Person click on "SubmitButton"
     And I wait for 2 sec
     And Person click on "Assignments"
-    And I wait for 1 sec
+    And I wait for 3 sec
     And Person click on "CreateNewAssignment"
     And I wait for 1 sec
     And Person click on "SelectQuizArrow"
