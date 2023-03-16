@@ -61,7 +61,6 @@ public class JavaStepDefs {
            System.out.println(aDaysOfWeek[i] + " "+ aDateOfWeek[i]);
        }
 
-
-
     }
+
 }
