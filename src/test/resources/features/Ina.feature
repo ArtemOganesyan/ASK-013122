@@ -2,7 +2,7 @@
 Feature:  ASK tests
 
 
-  #Registration-"New User-First Name"
+  # Registration-"New User-First Name- new feature added"
 @askscenario
  Scenario: ASK scenario
  Given IB open url "http://ask-stage.portnov.com/#/registration"
@@ -20,8 +20,9 @@ Feature:  ASK tests
   And IB wait for "3" sec
   Then IB click on "RegisterMeButton"
   And IB wait for "4" sec
+ Then I wait for 5 sec
 
- # I wish Have good day!!!:)
+ # I wish Have a good day!!!:)
 
 
 

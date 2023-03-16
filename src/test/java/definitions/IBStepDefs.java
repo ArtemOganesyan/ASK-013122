@@ -28,4 +28,10 @@ public class IBStepDefs {
     public void ibClickOn(String elementName) {
         getDriver().findElement(By.xpath(IBElementLib.byName(elementName))).click();
     }
+
+    @Then("^I wait for (\\d+) sec$")
+    public void iWaitForSec( int sec) throws Exception {
+    }
 }
+
+
