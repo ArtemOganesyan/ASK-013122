@@ -12,13 +12,23 @@ import static support.TestContext.getDriver;
 public class irinaDStepsDef {
     @Given("IrinaD open {string}")
     public void irinadOpen(String url) {
-        getDriver().get(XpathirinaDLib.url);
+        String openUrl;
+
+        if ("REG_URL".equals(url)) {
+            openUrl = XpathirinaDLib.REG_URL;
+        } else if ("LOG_URL".equals(url)) {
+            openUrl = XpathirinaDLib.LOG_URL;
+        } else {
+            throw new IllegalArgumentException();
+        }
+
+        getDriver().get(openUrl);
     }
 
 
     @And("IrinaD waite for {int} sec")
     public void irinadWaiteForSec(int sec) throws Exception {
-        Thread.sleep(sec * 1000);
+        Thread.sleep(sec * 1000L);
 
     }
 
@@ -30,6 +40,11 @@ public class irinaDStepsDef {
     @Then("IrinaD click on the {string}")
     public void irinadClickOnThe(String xpath) {
         getDriver().findElement(By.xpath(XpathirinaDLib.ElementForIrinaD(xpath))).click();
+    }
+
+    @Then("IrinaD clear element with xpath {string}")
+    public void irinadClearElementWithXpath(String xpath) {
+        getDriver().findElement(By.xpath(XpathirinaDLib.ElementForIrinaD(xpath))).clear();
     }
 }
 

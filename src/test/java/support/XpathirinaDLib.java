@@ -1,25 +1,38 @@
 package support;
 
 public class XpathirinaDLib {
-    public static String url = ("http://ask-stage.portnov.com/#/registration");
+    public static final String REG_URL = ("http://ask-stage.portnov.com/#/registration");
+    public static final String LOG_URL = ("http://ask-stage.portnov.com/#/login");
 
     public static String ElementForIrinaD(String name) {
-        if (name.equals("FirstName")) {
-            return "//input[@formcontrolname='firstName']";
-        } else if (name.equals("LastName")) {
-            return "//input[@formcontrolname='lastName']";
-        } else if (name.equals("Email")) {
+        switch (name) {
+            case "FirstName":
+                return "//input[@formcontrolname='firstName']";
+            case "LastName":
+                return "//input[@formcontrolname='lastName']";
+            case "Email":
                 return "//input[@formcontrolname='email']";
-            } else if (name.equals("GroupCode")) {
-            return "//input[@formcontrolname='group']";
-        } else if (name.equals("Password")){
-            return "//input[@formcontrolname='password']";
-        } else if (name.equals("ConfirmPassword")) {
-            return "//input[@formcontrolname='confirmPassword']";
-        } else if (name.equals("RegisterMe")){
-            return "//span[contains (text(), 'Register Me')]";
+            case "GroupCode":
+                return "//input[@formcontrolname='group']";
+            case "Password":
+                return "//input[@formcontrolname='password']";
+            case "ConfirmPassword":
+                return "//input[@formcontrolname='confirmPassword']";
+            case "RegisterMe":
+                return "//span[contains (text(), 'Register Me')]";
+            case "Signin":
+                return "//button[@class='mat-raised-button mat-primary']";
+            case "Setting":
+                return "//h5[contains(text(),'Settings')]";
+            case "ChengeYourName":
+                return "//span[contains (text(), 'Change Your Name')]";
+            case "NewName":
+                return "//input[@placeholder='New name']";
+            case "Change":
+                return "//mat-dialog-container/../..//span[contains (text(), 'Change')]";
         }
             return "";
-        }
 
     }
+
+}
