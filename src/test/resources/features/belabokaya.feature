@@ -1,1 +1,1 @@
-git # This is my (Ina) cool feature
+# This is my (Ina) cool feature
