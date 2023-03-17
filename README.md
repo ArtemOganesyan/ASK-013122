@@ -1,6 +1,7 @@
 # ASK-013122
 
-Lemlem Mekasha\\
-Mitaan Patil\\
-Aleksandra Gribtsova\\
-Artem Oganesyan\\
+IrinaD\n
+Lemlem Mekasha\n
+Mitaan Patil\n
+Aleksandra Gribtsova\n
+Artem Oganesyan
