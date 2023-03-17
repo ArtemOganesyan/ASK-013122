@@ -1,3 +1,6 @@
-new# ASK-013122
+# ASK-013122
 
-lemlem mekasha
+Lemlem Mekasha\\
+Mitaan Patil\\
+Aleksandra Gribtsova\\
+Artem Oganesyan\\
