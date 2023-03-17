@@ -74,6 +74,7 @@ Feature: Alexa's Ask Tests - Passed Textual Quiz - E2E (positive)
     And Person type "12345#Abc" into "ConfirmPassword"
     Then Person click on "RegisterMeButton"
     And I wait for 2 sec
+#    Just note: Activation code comes from the AlexaHelper java file:
     And I retrieve activation code info for email "alexa_fake_email@gmail.com"
     And I wait for 2 sec
     And I activate mine user
