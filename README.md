@@ -1,6 +1,7 @@
 # ASK-013122
 
-Yuliya Slabysh
+Yuliya Slabysh  
+Mashko Kateryna
 Vitaly Kamynin  
 Victoria  
 Ina Belabokaya  
@@ -10,3 +11,4 @@ Lemlem Mekasha
 Mitaan Patil  
 Aleksandra Gribtsova  
 Artem Oganesyan  
+
