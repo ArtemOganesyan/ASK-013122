@@ -1,5 +1,6 @@
 # ASK-013122
 
+Yuliya Slabysh  
 Mashko Kateryna
 Vitaly Kamynin  
 Victoria  
