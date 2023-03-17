@@ -11,7 +11,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.sql.*;
 
-public class Helper {
+public class AlexaHelper {
     static final String DB_URL = "jdbc:mysql://44.205.92.189:3307/application?autoReconnect=true&useSSL=false";
     static final String USER = "testuser";
     static final String PASS = "password";
@@ -57,4 +57,3 @@ public class Helper {
         }
     }
 }
-
