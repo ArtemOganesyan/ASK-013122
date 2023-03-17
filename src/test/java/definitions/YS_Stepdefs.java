@@ -2,6 +2,7 @@
 package definitions;
 
 import cucumber.api.java.en.And;
+import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -22,13 +23,15 @@ public class YS_Stepdefs {
         getDriver().findElement(By.xpath(YSLib.byName(elementName))).sendKeys(text);
     }
 
+
+
     @Then("YS click on {string}")
     public void artClickOn(String elementName) {
         getDriver().findElement(By.xpath(YSLib.byName(elementName))).click();
     }
 
 
-    @And("I retrieve activation info for email {string}")
+    @And("YS retrieve activation info for email {string}")
     public void iRetrieveActivationInfoForEmail(String email) throws SQLException {
         String result = Helper.getAccessToken(email);
         String[] part = result.split(";");
@@ -37,7 +40,7 @@ public class YS_Stepdefs {
         System.out.println(result);
     }
 
-    @And("I activate user")
+    @And("YS activate user")
     public void iActivateUser() throws IOException {
         Helper.activateUser(userId, activationCode);
     }
@@ -49,7 +52,7 @@ public class YS_Stepdefs {
 
 
 
-    @And("I move slider {int} step {string} for xpath {string}")
+    @And("YS move slider {int} step {string} for xpath {string}")
     public void iMoveSliderStepRightForXpath(int numberOfSteps,String direction, String sliderXpath) {
 
         for (int i=0; i<numberOfSteps; i++){

@@ -1,6 +1,8 @@
 package support;
 
 public class YSLib {
+    public static String StagingEnvWeb;
+
     public static String byName(String elementName) {
         if (elementName.equals("EmailField")) {
             return "//input[@formcontrolname='email']";

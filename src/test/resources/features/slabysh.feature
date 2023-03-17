@@ -1,25 +1,25 @@
 @YStests
 Feature: YS tests
 
-@YSscenario 1
-Scenario: YS scenario 1
-Given I open url "https://store-stage.portnov.com/"
-And I wait for 4 sec
-Then I resize window to 420 and 1200
-And I wait for 3 sec
+  @YSscenario1
+  Scenario: YS scenario 1
+    Given I open url "https://store-stage.portnov.com/"
+    And I wait for 4 sec
+    Then I resize window to 420 and 1200
+    And I wait for 3 sec
 
   @YSscenario2
   Scenario: YS scenario 2
     Given I open url "http://ask-stage.portnov.com/#/registration"
     And I type "YTest" into element with xpath "//input[@formcontrolname='firstName']"
     And I type "SUser" into element with xpath "//input[@formcontrolname='lastName']"
-    And I type "ouruser@email.com" into element with xpath "//input[@formcontrolname='email']"
+    And I type "ouruser1@email.com" into element with xpath "//input[@formcontrolname='email']"
     And I type "B1" into element with xpath "//input[@formcontrolname='group']"
     And I type "123abc" into element with xpath "//input[@formcontrolname='password']"
     And I type "123abc" into element with xpath "//input[@formcontrolname='confirmPassword']"
     And I click on element with xpath "//span[contains(text(),'Register Me')]"
-    And I retrieve activation info for email "ouruser@email.com"
-    And I activate user
+    And YS retrieve activation info for email "ouruser1@email.com"
+    And YS activate user
 
   @YSscenario3
   Scenario: YS scenario 3
@@ -89,13 +89,13 @@ And I wait for 3 sec
     And YS click on "Delete"
 
   @YSscenario5
-  Scenario: ASK scenario 5
+  Scenario: YS scenario 5
     Given I open url "https://store-stage.portnov.com/"
     And I wait for 4 sec
     Then I resize window to 420 and 1200
     And I wait for 3 sec
     And I take screenshot
-    And I wait for 3 se
+    And I wait for 3 sec
 
   @YScenario6
   Scenario:  YS scenario 6
@@ -132,5 +132,6 @@ And I wait for 3 sec
     And Ys click on element "SubmitButton"
     And I wait for 4 sec
     And Ys click on element "My Assignments"
+    And I wait for 2 sec
     And Ys click on element "Go To Assessment"
     And I wait for 2 sec
