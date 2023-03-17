@@ -103,10 +103,10 @@ public class dankinaElementLib {
             return "//span[contains(text(),'Delete')]";
         }
         if (elementName.equals("Tat Quiz 2 Questions")) {
-            return "//mat-panel-title[contains(text(),'Tat Quiz')] ";
+            return "//mat-panel-title[contains(text(),'Tat Quiz')]";
         }
         if (elementName.equals("Delete Quiz")) {
-            return "";
+            return "//mat-panel-title[contains(text(),'Tat Quiz')]/../../..//span[contains(text(), 'Delete')]";
         }
         if (elementName.equals("Delete in red")) {
             return "//body/div[2]/div[2]/div[1]/mat-dialog-container[1]/ac-modal-confirmation[1]/div[2]/button[2]";

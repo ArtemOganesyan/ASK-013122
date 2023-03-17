@@ -104,6 +104,21 @@ Scenario: Deleting User
     Then Tat click on "Delete"
     And I wait for 5 sec
 
+  @scenario5
+  Scenario: Deleting Quiz
+    Given Tat open url "My string"
+    Then Tat type "1979dakata@gmail.com" into "EmailField"
+    And Tat type "12345Abc" into "PasswordField"
+    Then Tat click on "SubmitButton"
+    And I wait for 2 sec
+    Then Tat click on "Quizzes"
+    And I wait for 5 sec
+    Then Tat scroll on "Tat Quiz 2 Questions"
+    And I wait for 5 sec
+    Then  Tat click on "Delete Quiz"
+    And I wait for 5 sec
+    Then Tat click on "Delete in red"
+    And I wait for 5 sec
 
 
 
