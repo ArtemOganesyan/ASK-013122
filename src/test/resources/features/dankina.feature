@@ -74,14 +74,12 @@ Then I click on element with xpath "//h5[contains(text(), 'My Assignments')]"
 And I wait for 3 sec
 And I click on element with xpath "//span[contains(text(),'Go To Assessment')]"
 And I wait for 2 sec
-And I take screenshot
 Then I click on element with xpath "//div[contains(text(),'Tat Answer 2')]"
 And I wait for 5 sec
 And I click on element with xpath "//span[contains(text(),'Tat Answer 1 for question 2')]"
 And I wait for 5 sec
 And I click on element with xpath "//span[contains(text(),'Submit My Answers')]"
 And I wait for 7 sec
-And I take screenshot
 And I click on element with xpath "//span[contains(text(),'Ok')]"
 
 
