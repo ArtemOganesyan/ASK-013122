@@ -19,10 +19,10 @@ Feature:  ASK tests
   And IB type "12345#" into "ConfirmPasswordField"
   And IB wait for "3" sec
   Then IB click on "RegisterMeButton"
-  And IB wait for "4" sec
+  And IB wait for "3" sec
  Then I wait for 5 sec
 
- # I wish Have a good day!!!:)
+ # I wish everyone- Have a good day!!!:)))
 
 
 
