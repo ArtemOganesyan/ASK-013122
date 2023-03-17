@@ -22,7 +22,7 @@ Feature: Smoke tests
     And I type "Geography" into element with xpath "//input[@formcontrolname='name']"
     And I click on element with xpath "//mat-icon[contains(text(), 'add_circle')]"
     And I wait for 3 sec
-    And I move slider 1 step "left" for xpath "//mat-panel-title[contains(text(), 'Q1')]/../../..//mat-slider"
+    And User move slider 1 step "left" for xpath "//mat-panel-title[contains(text(), 'Q1')]/../../..//mat-slider"
     And I wait for 3 sec
     And I click on element with xpath "//mat-panel-title[contains(text(), 'Q1')]/../../..//mat-radio-button[2]"
     And I type "What is the capital city of Spain?" into element with xpath "//mat-panel-title[contains(text(), 'Q1')]/../../..//textarea[@formcontrolname='question']"
@@ -91,8 +91,8 @@ Feature: Smoke tests
     And I type "12345Abc" into element with xpath "//input[@formcontrolname='password']"
     And I type "12345Abc" into element with xpath "//input[@formcontrolname='confirmPassword']"
     And I click on element with xpath "//span[contains(text(),'Register Me')]"
-    And I retrieve activation code for email "example123@email.com"
-    And I activate user
+    And User retrieve activation code for email "example123@email.com"
+    And User activate user
 
   @Ask_scenario_5
   Scenario: Create new assignment - New user

@@ -32,7 +32,7 @@ public class HrytsenkoStepDefs {
         getDriver().findElement(By.xpath(hrytsenkoXpath.ElementFor(XpathName))).click();
     }
 
-    @And("I retrieve activation code for email {string}")
+    @And("User retrieve activation code for email {string}")
     public void iRetrieveActivationCodeForEmail(String email) throws SQLException {
         String result = Helper.getAccessToken(email);
         String[] part = result.split(";");
@@ -41,12 +41,12 @@ public class HrytsenkoStepDefs {
         System.out.println(result);
     }
 
-    @And("I activate user")
+    @And("User activate user")
     public void iActivateUser() throws IOException {
         Helper.activateUser(userId, activationCode);
     }
 
-    @And("I move slider {int} step {string} for xpath {string}")
+    @And("User move slider {int} step {string} for xpath {string}")
     public void iMoveSliderStepRightForXpath(int numberOfSteps,String direction, String sliderXpath) {
         for (int i = 0; i<numberOfSteps; i++) {
             if (direction.equals("right")) {
