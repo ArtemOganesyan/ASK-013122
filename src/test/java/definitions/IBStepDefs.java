@@ -29,7 +29,7 @@ public class IBStepDefs {
         getDriver().findElement(By.xpath(IBElementLib.byName(elementName))).click();
     }
 
-    @Then("^I wait for (\\d+) sec$")
+    @Then("^Inna wait for (\\d+) sec$")
     public void iWaitForSec( int sec) throws Exception {
     }
 }
