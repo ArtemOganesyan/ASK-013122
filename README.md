@@ -1,5 +1,6 @@
 # ASK-013122
 
+#Tatsiana Dankina
 Yuliya Slabysh  
 Mashko Kateryna
 Vitaly Kamynin  
@@ -11,4 +12,3 @@ Lemlem Mekasha
 Mitaan Patil  
 Aleksandra Gribtsova  
 Artem Oganesyan  
-
