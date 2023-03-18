@@ -1,7 +1,7 @@
 @tdtests
 Feature: TD tests
 
-  @askscenario1
+@askscenario1
   Scenario: ASK scenario Create and Activate New User
     Given I open url "http://ask-stage.portnov.com/#/registration"
     Then I type "TatTest" into element with xpath "//input[@formcontrolname='firstName']"
@@ -16,7 +16,7 @@ Feature: TD tests
     Then I activate user
 
 
-  @askscenario2
+@askscenario2
   Scenario: ASK scenario Create and assign new quiz
     Given Tat open url "My string"
     Then Tat type "1979dakata@gmail.com" into "EmailField"
@@ -62,30 +62,30 @@ Feature: TD tests
     And I wait for 7 sec
 
 
-  @Scenario3
-Scenario: ASK scenario "Taking a quiz"
-Given I open url "http://ask-stage.portnov.com"
-Then I should see page title contains "Assessment"
-And I type "myfakeemail@email.com" into element with xpath "//input[@formcontrolname='email']"
-And I type "12345Abc" into element with xpath "//input[@formcontrolname='password']"
-And I click on element with xpath "//button[@type='submit']"
-And I wait for 3 sec
-Then I click on element with xpath "//h5[contains(text(), 'My Assignments')]"
-And I wait for 3 sec
-And I click on element with xpath "//span[contains(text(),'Go To Assessment')]"
-And I wait for 2 sec
-Then I click on element with xpath "//div[contains(text(),'Tat Answer 2')]"
-And I wait for 5 sec
-And I click on element with xpath "//span[contains(text(),'Tat Answer 1 for question 2')]"
-And I wait for 5 sec
-And I click on element with xpath "//span[contains(text(),'Submit My Answers')]"
-And I wait for 7 sec
-And I click on element with xpath "//span[contains(text(),'Ok')]"
+@Scenario3
+  Scenario: ASK scenario "Taking a quiz"
+    Given I open url "http://ask-stage.portnov.com"
+    Then I should see page title contains "Assessment"
+    And I type "myfakeemail@email.com" into element with xpath "//input[@formcontrolname='email']"
+    And I type "12345Abc" into element with xpath "//input[@formcontrolname='password']"
+    And I click on element with xpath "//button[@type='submit']"
+    And I wait for 3 sec
+    Then I click on element with xpath "//h5[contains(text(), 'My Assignments')]"
+    And I wait for 3 sec
+    And I click on element with xpath "//span[contains(text(),'Go To Assessment')]"
+    And I wait for 2 sec
+    Then I click on element with xpath "//div[contains(text(),'Tat Answer 2')]"
+    And I wait for 5 sec
+    And I click on element with xpath "//span[contains(text(),'Tat Answer 1 for question 2')]"
+    And I wait for 5 sec
+    And I click on element with xpath "//span[contains(text(),'Submit My Answers')]"
+    And I wait for 7 sec
+    And I click on element with xpath "//span[contains(text(),'Ok')]"
 
 
 
-  @Scenario4
-Scenario: Deleting User
+@Scenario4
+  Scenario: Deleting User
     Given Tat open url "My string"
     Then Tat type "1979dakata@gmail.com" into "EmailField"
     And Tat type "12345Abc" into "PasswordField"
@@ -102,7 +102,7 @@ Scenario: Deleting User
     Then Tat click on "Delete"
     And I wait for 5 sec
 
-  @scenario5
+@scenario5
   Scenario: Deleting Quiz
     Given Tat open url "My string"
     Then Tat type "1979dakata@gmail.com" into "EmailField"
