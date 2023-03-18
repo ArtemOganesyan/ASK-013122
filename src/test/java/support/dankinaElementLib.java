@@ -3,6 +3,7 @@ package support;
 public class dankinaElementLib {
     public static String StagingEnvWeb = "http://ask-stage.portnov.com";
 
+
     public static String byName(String elementName) {
         if (elementName.equals("EmailField")) {
             return "//input[@formcontrolname='email']";
