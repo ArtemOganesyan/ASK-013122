@@ -9,7 +9,7 @@ import support.XpathirinaDLib;
 
 import static support.TestContext.getDriver;
 
-public class irinaDStepsDef {
+public class irinaDStepDefs {
     @Given("IrinaD open {string}")
     public void irinadOpen(String url) {
         String openUrl;
@@ -25,12 +25,7 @@ public class irinaDStepsDef {
         getDriver().get(openUrl);
     }
 
-
-    @And("IrinaD waite for {int} sec")
-    public void irinadWaiteForSec(int sec) throws Exception {
-        Thread.sleep(sec * 1000L);
-
-    }
+    
 
     @Then("IrinaD type {string} in the field {string}")
     public void irinadTypeInTheField(String text, String xpathname) {
@@ -45,6 +40,12 @@ public class irinaDStepsDef {
     @Then("IrinaD clear element with xpath {string}")
     public void irinadClearElementWithXpath(String xpath) {
         getDriver().findElement(By.xpath(XpathirinaDLib.ElementForIrinaD(xpath))).clear();
+    }
+
+
+    @And("IrinaD waite for {int} sec")
+    public void irinadWaiteForSec(int sec) throws Exception{
+        Thread.sleep(sec * 1000);
     }
 }
 
