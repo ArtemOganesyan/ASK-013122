@@ -17,7 +17,6 @@ Feature: TD tests
     And I wait for element with xpath "//*[contains(text(),'You have been Registered.')]" to be present
     And element with xpath "//*[contains(text(),'You have been Registered.')]" should be displayed
 
-
 @askscenario2
   Scenario: ASK scenario Create and assign new quiz
     Given Tat open url "My string"
@@ -63,7 +62,6 @@ Feature: TD tests
     And Tat click on "Give Assignment"
     And I wait for 7 sec
 
-
 @Scenario3
   Scenario: ASK scenario "Taking a quiz"
     Given I open url "http://ask-stage.portnov.com"
@@ -83,8 +81,6 @@ Feature: TD tests
     And I click on element with xpath "//span[contains(text(),'Submit My Answers')]"
     And I wait for 7 sec
     And I click on element with xpath "//span[contains(text(),'Ok')]"
-
-
 
 @Scenario4
   Scenario: Deleting User
