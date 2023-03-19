@@ -14,6 +14,8 @@ Feature: TD tests
     And I wait for 5 sec
     And I retrieve activation info for email "myfakeemail@email.com"
     Then I activate user
+    And I wait for element with xpath "//*[contains(text(),'You have been Registered.')]" to be present
+    And element with xpath "//*[contains(text(),'You have been Registered.')]" should be displayed
 
 
 @askscenario2
