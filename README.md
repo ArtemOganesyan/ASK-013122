@@ -1,8 +1,10 @@
 # ASK-013122
 
-<<<<<<< HEAD
 #Tatsiana Dankina
-=======
+Yuliya Slabysh  
+Mashko Kateryna
+Vitaly Kamynin  
+Victoria  
 Ina Belabokaya  
 MarinaA  
 IrinaD  
@@ -10,4 +12,3 @@ Lemlem Mekasha
 Mitaan Patil  
 Aleksandra Gribtsova  
 Artem Oganesyan  
->>>>>>> main

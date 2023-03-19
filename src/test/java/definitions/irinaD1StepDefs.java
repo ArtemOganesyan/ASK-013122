@@ -6,14 +6,28 @@ import cucumber.api.java.en.Then;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
+import support.Helper;
 import support.IrinaD1xpathLib;
 
-import static support.TestContext.getDriver;
+import java.io.IOException;
+import java.sql.SQLException;
 
-public class irinaD1StepsDef {
-    @Given("Kira open page of Teachers`s account {string}")
-    public void kiraOpenURLOfTeachersSAccount(String LOG_URL) {
-        getDriver().get(IrinaD1xpathLib.LOG_URL);
+import static support.TestContext.getDriver;
+public class irinaD1StepDefs {
+        int userId;
+        String activationCode;
+
+    @Given("Kira open page {string}")
+    public void kiraOpenURLOfTeachersSAccount(String url) {
+        String openUrl;
+        if ("REG_URL".equals(url)) {
+            openUrl = IrinaD1xpathLib.REG_URL;
+        } else if ("LOG_URL".equals(url)) {
+            openUrl = IrinaD1xpathLib.LOG_URL;
+        } else {
+            throw new IllegalArgumentException();
+        }
+        getDriver().get(openUrl);
     }
 
     @Then("Kira is typing {string} into {string}")
@@ -39,4 +53,27 @@ public class irinaD1StepsDef {
         executor.executeScript("window.scrollBy(0, " + offset + ");", element);
         Thread.sleep(500);
     }
-}
+
+
+    @Then("Then I type {string} into element with xpath {string}")
+    public void thenITypeIntoElementWithXpath(String text, String xpathname) {
+        getDriver().findElement(By.xpath(IrinaD1xpathLib.IrinaDElement(xpathname))).sendKeys(text);
+    }
+
+
+    @And("Kira retrieves activation code for {string}")
+    public void kiraRetrievesActivationCodeForEmail(String email) throws SQLException {
+        String result= Helper.getAccessToken(email);
+        String[] part = result.split(";");
+        userId = Integer.parseInt(part[0]);
+        activationCode =part[1];
+        System.out.println(result);
+
+    }
+
+    @And("Kira activates user")
+    public void kiraActivatesUser() throws IOException {
+            Helper.activateUser(userId, activationCode);
+        }
+    }
+
