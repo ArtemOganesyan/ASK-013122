@@ -28,16 +28,14 @@ public class IBStepDefs {
     public void ibClickOn(String elementName) {
         getDriver().findElement(By.xpath(IBElementLib.byName(elementName))).click();
     }
-<<<<<<< HEAD
-=======
 
 
     @Then("I delete {string} into element with xpath {string}")
     public void iDeleteIntoElementWithXpath(String text, String elementName) {
         getDriver().findElement(By.xpath((IBElementLib.byName(elementName)))).sendKeys();
     }
->>>>>>> main
 }
+
 
 
 
