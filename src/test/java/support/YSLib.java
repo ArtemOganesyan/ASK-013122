@@ -107,10 +107,19 @@ public class YSLib {
             return "//h5[contains(text(), 'My Assignments')]";
         }
 
-
         if (elementName.equals("Go To Assessment")) {
-            return "//*[contains(text(),'TestQuizeYS2')]/../../..//span";
+            return "//td[contains(text(),'TestQuizeYS4')]/..//span[contains(text(),'Go To Assessment')]";
         }
+        if (elementName.equals("StudentAnswer1")) {
+            return "//*[contains(text(),'Question 1 / 2')]/..//text()[contains(., 'Second Option')]/..";
+        }
+        if (elementName.equals("StudentAnswer2")) {
+            return "//*[contains(text(),'Question 2 / 2')]/..//text()[contains(., 'First option')]/..";
+        }
+        if (elementName.equals("Submit My Answers")) {
+            return "//span[contains(text(),'Submit My Answers')]";
+        }
+
         return "";
     }
 }
