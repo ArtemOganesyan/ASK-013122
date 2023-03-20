@@ -24,6 +24,14 @@ Feature:  ASK tests
 
  # I wish everyone- Have a good day!!!:)))
 
+
+
+
+ # TEST - "Change Student Name"
+ # REQUIREMENTS:
+ # With each new Test Run, please change the userName in LINES: 7; 15;19
+ # Test data: "InaBina" change to "Ina" and vice versa for new Test Run.
+
  @askscenario1
  Scenario: ASK scenario 1
   Given I open url "http://ask-stage.portnov.com/#/login"
