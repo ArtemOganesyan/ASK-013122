@@ -30,7 +30,7 @@ Feature:  ASK tests
  # With each new Test Run, please change the userName in LINES: 7; 15;19
  # Test data: "InaBina" change to "Ina" and vice versa for new Test Run.
  
- @askscenario1
+ @askscenario1git
  Scenario: ASK scenario 1
   Given I open url "http://ask-stage.portnov.com/#/login"
   And I type "ask_8@gmail.com" into element with xpath "//input[@formcontrolname='email']"
