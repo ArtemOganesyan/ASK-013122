@@ -59,7 +59,8 @@ Feature:  ASK tests
   And I click on element with xpath "//span[contains(text(), 'Log Out')]"
   And I wait for 4 sec
 
-  # Thank you and Good Luck!!!:):):)
+  # Thank you and Good Luck with test!!!:):):)
+
 
 
 
