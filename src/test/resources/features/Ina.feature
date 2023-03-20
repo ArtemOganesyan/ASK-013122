@@ -25,7 +25,6 @@ Feature:  ASK tests
 
 
 
- 
  # TEST - "Change Student Name"
  # REQUIREMENTS:
  # With each new Test Run, please change the userName in LINES: 7; 15;19
