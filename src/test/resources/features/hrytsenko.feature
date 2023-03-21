@@ -56,7 +56,7 @@ Feature: Smoke tests
 
   @Ask_scenario_2
   Scenario: Registration - Empty fields - Error messages
-    Given I open url "http://ask-stage.portnov.com"
+    Given User open url "ASK"
     Then I should see page title contains "Assessment"
     And I click on element with xpath "//span[contains(text(),'Register Now')]"
     And I wait for 3 sec
