@@ -29,12 +29,10 @@ public class IBStepDefs {
         getDriver().findElement(By.xpath(IBElementLib.byName(elementName))).click();
     }
 
+    @Then("^Inna wait for (\\d+) sec$")
+    public void iWaitForSec( int sec) throws Exception {
+        Thread.sleep(sec * 1000);
+    }
 }
-
-
-
-
-
-
 
 
