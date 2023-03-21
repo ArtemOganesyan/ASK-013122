@@ -52,6 +52,7 @@ Feature:  ASK tests
   And I wait for 4 sec
   Then element with xpath "//h3[contains(text(), 'Ina')]" should contain text "Ina"
   And I wait for 5 sec
+  Then change name back
   And I click on element with xpath "//h5[contains(text(), 'Log Out')]"
   And I wait for 5 sec
   Then element with xpath "//h1[contains(text(), 'Confirmation')]" should be displayed
