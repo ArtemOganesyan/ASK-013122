@@ -29,15 +29,9 @@ public class IBStepDefs {
         getDriver().findElement(By.xpath(IBElementLib.byName(elementName))).click();
     }
 
-
-    @Then("I delete {string} into element with xpath {string}")
-    public void iDeleteIntoElementWithXpath(String text, String elementName) {
-        getDriver().findElement(By.xpath((IBElementLib.byName(elementName)))).sendKeys();
+    @Then("^Inna wait for (\\d+) sec$")
+    public void iWaitForSec( int sec) throws Exception {
     }
 }
-
-
-
-
 
 
