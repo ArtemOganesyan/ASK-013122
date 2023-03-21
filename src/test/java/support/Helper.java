@@ -16,12 +16,12 @@ public class Helper {
     static final String USER = "testuser";
     static final String PASS = "password";
 
-    public static String getAccessToken(String userEmail) throws SQLException {
+    public static String getAccessToken(String randomEmail) throws SQLException {
         String result = "No data";
         Connection con = DriverManager.getConnection(DB_URL, USER, PASS);
 
         try(PreparedStatement pstmt = con.prepareStatement("SELECT id, activationCode FROM users WHERE email = ?");) {
-            pstmt.setString(1, userEmail);
+            pstmt.setString(1, randomEmail);
             ResultSet rs = pstmt.executeQuery();
 
             while (rs.next()) {
