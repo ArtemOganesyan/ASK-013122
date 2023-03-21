@@ -1,5 +1,8 @@
 # ASK-013122
 
+Tatsiana Dankina
+Yuliya Slabysh  
+Mashko Kateryna
 Vitaly Kamynin  
 Victoria  
 Ina Belabokaya  

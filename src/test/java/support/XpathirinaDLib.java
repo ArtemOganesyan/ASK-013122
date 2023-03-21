@@ -30,6 +30,8 @@ public class XpathirinaDLib {
                 return "//input[@placeholder='New name']";
             case "Change":
                 return "//mat-dialog-container/../..//span[contains (text(), 'Change')]";
+            case "You have been Registered.":
+                return "//h4[contains (text(), 'You have been Registered.')]";
         }
             return "";
 

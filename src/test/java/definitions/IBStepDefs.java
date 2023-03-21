@@ -29,8 +29,17 @@ public class IBStepDefs {
         getDriver().findElement(By.xpath(IBElementLib.byName(elementName))).click();
     }
 
-    @Then("^I wait for (\\d+) sec$")
+    @Then("^Inna wait for (\\d+) sec$")
     public void iWaitForSec( int sec) throws Exception {
+        Thread.sleep(sec * 1000);
+    }
+
+    @Then("change name back")
+    public void changeNameBack() {
+        getDriver().findElement(By.xpath("//span[contains(text(), 'Change Your Name')]")).click();
+        getDriver().findElement(By.xpath("//input[@formcontrolname='name']")).clear();
+        getDriver().findElement(By.xpath("//input[@formcontrolname='name']")).sendKeys("InaBina");
+        getDriver().findElement(By.xpath("//button[@mat-raised-button][@type='button']")).click();
     }
 }
 
