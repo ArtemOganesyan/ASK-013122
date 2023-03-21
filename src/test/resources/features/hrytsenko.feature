@@ -65,7 +65,11 @@ Feature: Smoke tests
     Then error message "Group code field is required" displayed
     Then error message "Password field is required" displayed
     Then error message "Confirm password field is required" displayed
+<<<<<<< HEAD
     And I wait for 1 sec
+=======
+    And I wait for 3 sec
+>>>>>>> a2f9bf6276679847b54296f925fc07cffee9f147
 
   @Ask_scenario_3
   Scenario: Sign in - Step Definition - Create my step definition
@@ -77,7 +81,11 @@ Feature: Smoke tests
     And I take screenshot
 
   @Ask_scenario_4
+<<<<<<< HEAD
   Scenario: Registration - New user - Step Definition - Activation
+=======
+  Scenario: Registration - New user - Definition - Helper
+>>>>>>> a2f9bf6276679847b54296f925fc07cffee9f147
     Given User open reg url "ASK"
     And I wait for 1 sec
     And User type a random first name into "FirstNameField"
@@ -88,9 +96,15 @@ Feature: Smoke tests
     And I wait for 1 sec
     And User type a random group code into "GroupCodeField"
     And I wait for 1 sec
+<<<<<<< HEAD
     And User type a random password into "PasswordRegField"
     And I wait for 1 sec
     And User type the same random password into "ConfirmPasswordField"
+=======
+    And User type "12345Abc" into "PasswordField"
+    And I wait for 1 sec
+    And User type "12345Abc" into "ConfirmPasswordField"
+>>>>>>> a2f9bf6276679847b54296f925fc07cffee9f147
     And I wait for 1 sec
     And User click on submit button "SubmitRegButton"
     And I wait for 1 sec

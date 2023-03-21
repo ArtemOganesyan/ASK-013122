@@ -13,11 +13,16 @@ public class Helper {
     static final String DB_URL = "jdbc:mysql://44.205.92.189:3307/application?autoReconnect=true&useSSL=false";
     static final String USER = "testuser";
     static final String PASS = "password";
+<<<<<<< HEAD
     public static String getAccessToken(String userEmail) throws SQLException {
+=======
+
+    public static String getAccessToken(String randomEmail) throws SQLException {
+>>>>>>> a2f9bf6276679847b54296f925fc07cffee9f147
         String result = "No data";
         Connection con = DriverManager.getConnection(DB_URL, USER, PASS);
         try(PreparedStatement pstmt = con.prepareStatement("SELECT id, activationCode FROM users WHERE email = ?");) {
-            pstmt.setString(1, userEmail);
+            pstmt.setString(1, randomEmail);
             ResultSet rs = pstmt.executeQuery();
             while (rs.next()) {
                 result = rs.getString("id") + ";" + rs.getString("activationCode");

@@ -20,9 +20,12 @@ public class hrytsenkoXpath {
         if (name.equals("LastNameField")) {
             return "//input[@formcontrolname='lastName']";
         }
+<<<<<<< HEAD
         if (name.equals("PasswordRegField")) {
             return "//input[@formcontrolname='password']";
         }
+=======
+>>>>>>> a2f9bf6276679847b54296f925fc07cffee9f147
         if (name.equals("ConfirmPasswordField")) {
             return "//input[@formcontrolname='confirmPassword']";
         }
@@ -47,12 +50,15 @@ public class hrytsenkoXpath {
         if (name.equals("Confirm password field is required")) {
             return "(//mat-error[@role='alert']/../..)[6]";
         }
+<<<<<<< HEAD
         if (name.equals("RegMeButton")) {
             return "//span[contains(text(),'Register Me')]";
         }
         if (name.equals("RegNowButton")) {
             return "//span[contains(text(),'Register Now')]";
         }
+=======
+>>>>>>> a2f9bf6276679847b54296f925fc07cffee9f147
         if (name.equals("SubmitRegButton")) {
             return "//span[contains(text(),'Register Me')]";
         }

@@ -42,11 +42,14 @@ public class HrytsenkoStepDefs {
         getDriver().findElement(By.xpath(hrytsenkoXpath.ElementFor(XpathName))).click();
     }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> a2f9bf6276679847b54296f925fc07cffee9f147
 
     @And("User move slider {int} step {string} for xpath {string}")
-    public void iMoveSliderStepRightForXpath(int numberOfSteps,String direction, String sliderXpath) {
-        for (int i = 0; i<numberOfSteps; i++) {
+    public void iMoveSliderStepRightForXpath(int numberOfSteps, String direction, String sliderXpath) {
+        for (int i = 0; i < numberOfSteps; i++) {
             if (direction.equals("right")) {
                 getDriver().findElement(By.xpath(sliderXpath)).sendKeys(Keys.ARROW_RIGHT);
             }
@@ -95,7 +98,11 @@ public class HrytsenkoStepDefs {
 
     @And("User retrieve activation code for email")
     public void iRetrieveActivationCodeForEmail() throws SQLException {
+<<<<<<< HEAD
         String result = HrytsenkoHelper.getAccessToken(randomEmail);
+=======
+        String result = Helper.getAccessToken(randomEmail);
+>>>>>>> a2f9bf6276679847b54296f925fc07cffee9f147
         String email = getRandomEmail();
         String[] part = result.split(";");
         userId = Integer.parseInt(part[0]);
@@ -106,7 +113,11 @@ public class HrytsenkoStepDefs {
     @And("User activate user")
     public void iActivateUser() throws IOException {
         String randomEmail = getRandomEmail();
+<<<<<<< HEAD
         HrytsenkoHelper.activateUser(userId, activationCode);
+=======
+        Helper.activateUser(userId, activationCode);
+>>>>>>> a2f9bf6276679847b54296f925fc07cffee9f147
     }
 
     private String generateRandomString(int length) {
@@ -120,6 +131,7 @@ public class HrytsenkoStepDefs {
         return sb.toString();
     }
 
+<<<<<<< HEAD
 
     @And("User type a random password into {string}")
     public void userTypeRandomPasswordInto(String XpathName) {
@@ -133,8 +145,14 @@ public class HrytsenkoStepDefs {
         getDriver().findElement(By.xpath(hrytsenkoXpath.ElementFor(XpathName))).sendKeys(password);
     }
 
+=======
+>>>>>>> a2f9bf6276679847b54296f925fc07cffee9f147
     @Then("error message {string} displayed")
     public void errorMessageDisplayed(String XpathName) {
         assertThat(getDriver().findElement(By.xpath(hrytsenkoXpath.ElementFor(XpathName))).isDisplayed()).isTrue();
     }
+<<<<<<< HEAD
+=======
+
+>>>>>>> a2f9bf6276679847b54296f925fc07cffee9f147
 }

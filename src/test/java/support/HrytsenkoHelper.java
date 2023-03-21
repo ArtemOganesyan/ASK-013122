@@ -1,5 +1,6 @@
 package support;
 
+<<<<<<< HEAD
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -55,3 +56,7 @@ public class HrytsenkoHelper {
 }
 
 
+=======
+public class HrytsenkoHelper {
+}
+>>>>>>> a2f9bf6276679847b54296f925fc07cffee9f147
