@@ -28,7 +28,7 @@ Feature:  ASK tests
  # TEST - "Change Student Name"
  # REQUIREMENTS:
  # With each new Test Run, please change the userName in LINES: 7; 15;19
- # Test data: "InaBina" change to "Ina" and vice versa for new Test Run.
+ # Test data: "Ina" change to "InaBina" and vice versa for new Test Run.
  
  @askscenario1git
  Scenario: ASK scenario 1
@@ -61,6 +61,7 @@ Feature:  ASK tests
   And I wait for 4 sec
 
   # Thank you and Good Luck with test!!!:):):)
+
 
 
 
