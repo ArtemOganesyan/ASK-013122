@@ -74,7 +74,7 @@ Feature: Smoke tests
   @Ask_scenario_3
   Scenario: Sign in - Java - Create my step definition
     Given User open url "ASK"
-    And User type "bdolart@greendike.com" into "EmailField"
+    And User type a random email into "EmailField"
     And User type "12345Abc" into "PasswordField"
     And User click "SubmitButton"
     And I wait for 3 sec
@@ -82,15 +82,23 @@ Feature: Smoke tests
 
   @Ask_scenario_4
   Scenario: Registration - New user - Definition - Helper
-    Given I open url "http://ask-stage.portnov.com/#/registration"
-    And I type "John" into element with xpath "//input[@formcontrolname='firstName']"
-    And I type "Johnson" into element with xpath "//input[@formcontrolname='lastName']"
-    And I type "example123@email.com" into element with xpath "//input[@formcontrolname='email']"
-    And I type "NFX007" into element with xpath "//input[@formcontrolname='group']"
-    And I type "12345Abc" into element with xpath "//input[@formcontrolname='password']"
-    And I type "12345Abc" into element with xpath "//input[@formcontrolname='confirmPassword']"
-    And I click on element with xpath "//span[contains(text(),'Register Me')]"
-    And User retrieve activation code for email "example123@email.com"
+    Given User open reg url "ASK"
+    And I wait for 1 sec
+    And User type a random first name into "FirstNameField"
+    And I wait for 1 sec
+    And User type a random last name into "LastNameField"
+    And I wait for 1 sec
+    And User type a random email into "EmailField"
+    And I wait for 1 sec
+    And User type a random group code into "GroupCodeField"
+    And I wait for 1 sec
+    And User type "12345Abc" into "PasswordField"
+    And I wait for 1 sec
+    And User type "12345Abc" into "ConfirmPasswordField"
+    And I wait for 1 sec
+    And User click on submit button "SubmitRegButton"
+    And I wait for 1 sec
+    And User retrieve activation code for email
     And User activate user
 
   @Ask_scenario_5
