@@ -1,5 +1,6 @@
 @askscenario-irinaD1
-  Feature: IrinaD1-New Assignment
+  Feature: IrinaD1-new scenarios
+    @irinaD1-1
     Scenario:New assignment
       Given Kira open page "LOG_URL"
       Then Kira is typing "bymike19@hieu.in" into "EmailField"
@@ -21,8 +22,8 @@
       #And Kira click on element with xpath "Give Assignment"
       #And Kira waits for 2 sec
 
-      @irinaD1_1
-      Scenario: Activation code
+    @irinaD1_2
+    Scenario: Activation code
         Given Kira open page "REG_URL"
         Then Kira is typing "Kira" into "FirstName"
         And Kira waits for 1 sec
@@ -40,6 +41,3 @@
         And Kira retrieves activation code for "qakira@gmail.com"
         And Kira waits for 1 sec
         And Kira activates user
-
-
-

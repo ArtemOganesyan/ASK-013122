@@ -4,7 +4,8 @@ public class IrinaD1xpathLib {
     public static String LOG_URL = ("http://ask-stage.portnov.com/#/login");
     public static String REG_URL = ("http://ask-stage.portnov.com/#/registration");
 
-    public static String IrinaDElement(String name) {
+
+    public static String getXPath(String name) {
         if (name.equals("EmailField")) {
             return "//input[@formcontrolname='email']";
         }
@@ -37,26 +38,27 @@ public class IrinaD1xpathLib {
         if (name.equals("FirstName")) {
             return "//input[@formcontrolname='firstName']";
         }
-            if (name.equals("LastName")){
-                return "//input[@formcontrolname='lastName']";
+        if (name.equals("LastName")) {
+            return "//input[@formcontrolname='lastName']";
         }
-            if (name.equals("Email")){
-                return "//input[@formcontrolname='email']";
+        if (name.equals("Email")) {
+            return "//input[@formcontrolname='email']";
         }
-            if (name.equals("GroupCode")){
-                return "//input[@formcontrolname='group']";
-            }
-            if (name.equals("Password")) {
-                return "//input[@formcontrolname='password']";
-            }
-            if (name.equals("ConfirmPassword")){
-                return "//input[@formcontrolname='confirmPassword']";
+        if (name.equals("GroupCode")) {
+            return "//input[@formcontrolname='group']";
         }
-            if (name.equals("RegisterMe")){
-                return "//button[@class='mat-raised-button mat-primary']";
-            }
+        if (name.equals("Password")) {
+            return "//input[@formcontrolname='password']";
+        }
+        if (name.equals("ConfirmPassword")) {
+            return "//input[@formcontrolname='confirmPassword']";
+        }
+        if (name.equals("RegisterMe")) {
+            return "//button[@class='mat-raised-button mat-primary']";
+
+        }
         return "";
     }
 
-}
 
+}
