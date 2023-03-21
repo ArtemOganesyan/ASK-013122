@@ -2,6 +2,7 @@ package definitions;
 
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import support.Helper;
@@ -10,6 +11,8 @@ import java.util.Random;
 import java.io.IOException;
 import java.sql.SQLException;
 import com.github.javafaker.Faker;
+
+import static org.assertj.core.api.Assertions.assertThat;
 import static support.TestContext.getDriver;
 
 public class HrytsenkoStepDefs {
@@ -40,10 +43,9 @@ public class HrytsenkoStepDefs {
     }
 
 
-
     @And("User move slider {int} step {string} for xpath {string}")
-    public void iMoveSliderStepRightForXpath(int numberOfSteps,String direction, String sliderXpath) {
-        for (int i = 0; i<numberOfSteps; i++) {
+    public void iMoveSliderStepRightForXpath(int numberOfSteps, String direction, String sliderXpath) {
+        for (int i = 0; i < numberOfSteps; i++) {
             if (direction.equals("right")) {
                 getDriver().findElement(By.xpath(sliderXpath)).sendKeys(Keys.ARROW_RIGHT);
             }
@@ -116,4 +118,10 @@ public class HrytsenkoStepDefs {
         }
         return sb.toString();
     }
+
+    @Then("error message {string} displayed")
+    public void errorMessageDisplayed(String XpathName) {
+        assertThat(getDriver().findElement(By.xpath(hrytsenkoXpath.ElementFor(XpathName))).isDisplayed()).isTrue();
+    }
+
 }

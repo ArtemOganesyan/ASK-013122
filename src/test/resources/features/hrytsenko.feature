@@ -63,18 +63,18 @@ Feature: Smoke tests
     When I click on element with xpath "//span[contains(text(),'Register Me')]"
     And I wait for 3 sec
     And I take screenshot
-    Then element with xpath "(//mat-error[@role='alert']/../..)[1]" should be present
-    Then element with xpath "(//mat-error[@role='alert']/../..)[2]" should be present
-    Then element with xpath "(//mat-error[@role='alert']/../..)[3]" should be present
-    Then element with xpath "(//mat-error[@role='alert']/../..)[4]" should be present
-    Then element with xpath "(//mat-error[@role='alert']/../..)[5]" should be present
-    Then element with xpath "(//mat-error[@role='alert']/../..)[6]" should be present
+    Then error message "First name field is required" displayed
+    Then error message "Last name field is required" displayed
+    Then error message "Email field is required" displayed
+    Then error message "Group code field is required" displayed
+    Then error message "Password field is required" displayed
+    Then error message "Confirm password field is required" displayed
     And I wait for 3 sec
 
   @Ask_scenario_3
   Scenario: Sign in - Java - Create my step definition
     Given User open url "ASK"
-    And User type a random email into "EmailField"
+    And User type "bdolart@greendike.com" into "EmailField"
     And User type "12345Abc" into "PasswordField"
     And User click "SubmitButton"
     And I wait for 3 sec
