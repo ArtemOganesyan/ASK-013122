@@ -31,6 +31,7 @@ public class IBStepDefs {
 
     @Then("^Inna wait for (\\d+) sec$")
     public void iWaitForSec( int sec) throws Exception {
+        Thread.sleep(sec * 1000);
     }
 }
 
