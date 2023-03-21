@@ -1,10 +1,6 @@
 @Ask_test
 Feature: Smoke tests
 
-  Background:
-    Given I open url "http://ask-stage.portnov.com"
-    Then I should see page title contains "Assessment"
-
   @Ask_scenario_1
   Scenario: Sign in - Teacher - Create new quiz
     Given I open url "http://ask-stage.portnov.com"
