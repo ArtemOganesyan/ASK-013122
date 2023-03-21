@@ -2,14 +2,17 @@ package definitions;
 
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
-import support.Helper;
+import support.HrytsenkoHelper;
 import support.hrytsenkoXpath;
 import java.util.Random;
 import java.io.IOException;
 import java.sql.SQLException;
 import com.github.javafaker.Faker;
+
+import static org.assertj.core.api.Assertions.assertThat;
 import static support.TestContext.getDriver;
 
 public class HrytsenkoStepDefs {
@@ -92,7 +95,7 @@ public class HrytsenkoStepDefs {
 
     @And("User retrieve activation code for email")
     public void iRetrieveActivationCodeForEmail() throws SQLException {
-        String result = Helper.getAccessToken(randomEmail);
+        String result = HrytsenkoHelper.getAccessToken(randomEmail);
         String email = getRandomEmail();
         String[] part = result.split(";");
         userId = Integer.parseInt(part[0]);
@@ -103,11 +106,11 @@ public class HrytsenkoStepDefs {
     @And("User activate user")
     public void iActivateUser() throws IOException {
         String randomEmail = getRandomEmail();
-        Helper.activateUser(userId, activationCode);
+        HrytsenkoHelper.activateUser(userId, activationCode);
     }
 
     private String generateRandomString(int length) {
-        String chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+        String chars = "NFX911";
         StringBuilder sb = new StringBuilder();
         Random rand = new Random();
         for (int i = 0; i < length; i++) {
@@ -115,5 +118,23 @@ public class HrytsenkoStepDefs {
             sb.append(chars.charAt(index));
         }
         return sb.toString();
+    }
+
+
+    @And("User type a random password into {string}")
+    public void userTypeRandomPasswordInto(String XpathName) {
+        String password = faker.internet().password(8, 16);
+        getDriver().findElement(By.xpath(hrytsenkoXpath.ElementFor(XpathName))).sendKeys(password);
+    }
+
+    @And("User type the same random password into {string}")
+    public void userTypeSameRandomPasswordInto(String XpathName) {
+        String password = getDriver().findElement(By.xpath(hrytsenkoXpath.ElementFor("PasswordRegField"))).getAttribute("value");
+        getDriver().findElement(By.xpath(hrytsenkoXpath.ElementFor(XpathName))).sendKeys(password);
+    }
+
+    @Then("error message {string} displayed")
+    public void errorMessageDisplayed(String XpathName) {
+        assertThat(getDriver().findElement(By.xpath(hrytsenkoXpath.ElementFor(XpathName))).isDisplayed()).isTrue();
     }
 }
