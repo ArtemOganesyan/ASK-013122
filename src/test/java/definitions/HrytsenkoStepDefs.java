@@ -4,7 +4,7 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
-import support.Helper;
+import support.HrytsenkoHelper;
 import support.hrytsenkoXpath;
 import java.util.Random;
 import java.io.IOException;
@@ -92,7 +92,7 @@ public class HrytsenkoStepDefs {
 
     @And("User retrieve activation code for email")
     public void iRetrieveActivationCodeForEmail() throws SQLException {
-        String result = Helper.getAccessToken(randomEmail);
+        String result = HrytsenkoHelper.getAccessToken(randomEmail);
         String email = getRandomEmail();
         String[] part = result.split(";");
         userId = Integer.parseInt(part[0]);
@@ -103,7 +103,7 @@ public class HrytsenkoStepDefs {
     @And("User activate user")
     public void iActivateUser() throws IOException {
         String randomEmail = getRandomEmail();
-        Helper.activateUser(userId, activationCode);
+        HrytsenkoHelper.activateUser(userId, activationCode);
     }
 
     private String generateRandomString(int length) {
