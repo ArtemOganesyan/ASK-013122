@@ -56,6 +56,8 @@ public class IrinaD1xpathLib {
         if (name.equals("RegisterMe")) {
             return "//button[@class='mat-raised-button mat-primary']";
 
+        } if (name.equals("You have been Registered.")){
+            return "//h4[contains (text(), 'You have been Registered.')]";
         }
         return "";
     }

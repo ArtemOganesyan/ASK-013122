@@ -1,7 +1,7 @@
 @IrinaD
   Feature: Registration, change name
     @irinaD1
-      Scenario: Registration
+      Scenario: Successeful registration
       Given IrinaD open "REG_URL"
       Then IrinaD type "Iriska" in the field "FirstName"
       Then IrinaD type "Iriska" in the field "LastName"
@@ -10,8 +10,8 @@
       Then IrinaD type "12345Abc" in the field "Password"
       Then IrinaD type "12345Abc" in the field "ConfirmPassword"
       Then IrinaD click on the "RegisterMe"
-      And IrinaD waite for 2 sec
-      Then message "You have been Registered." should be present
+      Then I wait for element with xpath "You have been Registered." to be present
+      Then element with xpath "You have been Registered." should be displayed
 
     @irinaD2
         Scenario: Change Name

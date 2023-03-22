@@ -66,5 +66,6 @@ public class irinaDStepDefs {
         File screenshot = screenshotTaker.getScreenshotAs(OutputType.FILE);
         FileUtils.copyFile(screenshot, new File("target/cucumber/screenshot " + System.currentTimeMillis() + ".png"));
     }
+
 }
 
