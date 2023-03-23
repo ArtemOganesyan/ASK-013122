@@ -2,6 +2,7 @@ package support;
 
 public class IBElementLib {
     public static String StagingEnvWeb = "http://ask-stage.portnov.com/#/registration";
+
     public static String byName(String elementName) {
         if (elementName.equals("FirstName")) {
             return "//input[@formcontrolname='firstName']";
@@ -25,8 +26,13 @@ public class IBElementLib {
         if (elementName.equals("RegisterMeButton")) {
             return "//span[contains(text(),'Register Me')]";
         }
+        if (elementName.equals("NewNameField")) {
+            return "//input[@formcontrolname='name']";
+        }
         return "";
     }
 }
+
+
 
 

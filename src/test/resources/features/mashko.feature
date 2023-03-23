@@ -2,7 +2,7 @@
 Feature: Smoke steps for test ASK013123-556
 
 
-  @firststep
+  @firstscenario
   Scenario: Login at stage web site
     Given I open url "http://ask-stage.portnov.com/#/login"
     Then I should see page title as "Assessment Control @ Portnov"
@@ -36,5 +36,14 @@ Feature: Smoke steps for test ASK013123-556
     Then I should see page title as "Assessment Control @ Portnov"
     And I wait for 5 sec
   #Then your quiz should be created and saved. Test is passed
+
+
+  @secondscenario
+  Scenario: first steps 1
+    Given Kat open url "Here is a link"
+    And Kat type "katya.mashko@gmail.com" into "EmailField"
+    And Kat type "12345qwerty12" into "PasswordField"
+    And Kat click on element "SubmitButton"
+    And I wait for 3 sec
 
 
