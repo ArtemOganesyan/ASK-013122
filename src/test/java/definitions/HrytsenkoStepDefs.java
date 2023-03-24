@@ -19,8 +19,9 @@ public class HrytsenkoStepDefs {
 
     int userId;
     String activationCode;
-    String randomEmail;
+    private String randomEmail;
     private final Faker faker = new Faker();
+    private String password;
 
     @Given("User open url {string}")
     public void userOpenUrl(String arg0) {
@@ -61,12 +62,14 @@ public class HrytsenkoStepDefs {
     @And("User type a random first name into {string}")
     public void userTypeRandomFirstNameInto(String XpathName) {
         String firstName = faker.name().firstName();
+        System.out.println("Generated First Name: " + firstName);
         getDriver().findElement(By.xpath(hrytsenkoXpath.ElementFor(XpathName))).sendKeys(firstName);
     }
 
     @And("User type a random last name into {string}")
     public void userTypeRandomLastNameInto(String XpathName) {
         String lastName = faker.name().lastName();
+        System.out.println("Generated Last Name: " + lastName);
         getDriver().findElement(By.xpath(hrytsenkoXpath.ElementFor(XpathName))).sendKeys(lastName);
     }
 
@@ -75,6 +78,7 @@ public class HrytsenkoStepDefs {
         Random rand = new Random();
         int randomNum = rand.nextInt(1000); // generate a random number between 0 and 999
         randomEmail = "user" + randomNum + "@example.com"; // create a base email address and append the random number
+        System.out.println("Generated Email: " + randomEmail);
         getDriver().findElement(By.xpath(hrytsenkoXpath.ElementFor(XpathName))).sendKeys(randomEmail);
     }
 
@@ -82,10 +86,11 @@ public class HrytsenkoStepDefs {
         return randomEmail;
     }
 
-    @And("User type a random group code into {string}")
-    public void userTypeRandomGroupCodeInto(String XpathName) {
-        String groupCode = generateRandomString(6).toUpperCase(); // generate a random string of length 6 and convert to uppercase
-        getDriver().findElement(By.xpath(hrytsenkoXpath.ElementFor(XpathName))).sendKeys(groupCode);
+    @And("User type group code {string} into {string}")
+    public void userTypeRandomGroupCodeInto(String text, String XpathName) {
+
+//        String groupCode = generateRandomString(6).toUpperCase(); // generate a random string of length 6 and convert to uppercase
+        getDriver().findElement(By.xpath(hrytsenkoXpath.ElementFor(XpathName))).sendKeys(text);
     }
 
     @And("User click on submit button {string}")
@@ -109,22 +114,27 @@ public class HrytsenkoStepDefs {
         HrytsenkoHelper.activateUser(userId, activationCode);
     }
 
-    private String generateRandomString(int length) {
-        String chars = "NFX911";
-        StringBuilder sb = new StringBuilder();
-        Random rand = new Random();
-        for (int i = 0; i < length; i++) {
-            int index = rand.nextInt(chars.length());
-            sb.append(chars.charAt(index));
-        }
-        return sb.toString();
-    }
+//    private String generateRandomString(int length) {
+//        String chars = "ABC123";
+//        StringBuilder sb = new StringBuilder();
+//        Random rand = new Random();
+//        for (int i = 0; i < length; i++) {
+//            int index = rand.nextInt(chars.length());
+//            sb.append(chars.charAt(index));
+//        }
+//        return sb.toString();
+//    }
 
 
     @And("User type a random password into {string}")
     public void userTypeRandomPasswordInto(String XpathName) {
         String password = faker.internet().password(8, 16);
+        System.out.println("Generated Password: " + password);
         getDriver().findElement(By.xpath(hrytsenkoXpath.ElementFor(XpathName))).sendKeys(password);
+    }
+
+    private String getPassword() {
+        return password;
     }
 
     @And("User type the same random password into {string}")
@@ -136,5 +146,16 @@ public class HrytsenkoStepDefs {
     @Then("error message {string} displayed")
     public void errorMessageDisplayed(String XpathName) {
         assertThat(getDriver().findElement(By.xpath(hrytsenkoXpath.ElementFor(XpathName))).isDisplayed()).isTrue();
+    }
+
+    @And("User type email into {string}")
+    public void userTypeEmailInto(String XpathName) {
+        String email = getRandomEmail();
+        getDriver().findElement(By.xpath(hrytsenkoXpath.ElementFor(XpathName))).sendKeys(randomEmail);
+    }
+
+    @And("User type password into {string}")
+    public void userTypePasswordInto(String XpathName) {
+        getDriver().findElement(By.xpath(hrytsenkoXpath.ElementFor(XpathName))).sendKeys(password);
     }
 }

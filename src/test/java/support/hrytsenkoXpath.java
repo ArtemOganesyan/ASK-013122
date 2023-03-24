@@ -56,6 +56,7 @@ public class hrytsenkoXpath {
         if (name.equals("SubmitRegButton")) {
             return "//span[contains(text(),'Register Me')]";
         }
+
         return "";
     }
 }

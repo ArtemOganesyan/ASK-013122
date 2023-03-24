@@ -87,21 +87,21 @@ Feature: Smoke tests
   @Ask_scenario_4
   Scenario: Registration - New user - Step Definition - Activation
     Given User open reg url "ASK"
-    And I wait for 3 sec
+    And I wait for 1 sec
     And User type a random first name into "FirstNameField"
-    And I wait for 3 sec
+    And I wait for 1 sec
     And User type a random last name into "LastNameField"
-    And I wait for 3 sec
+    And I wait for 1 sec
     And User type a random email into "EmailField"
-    And I wait for 3 sec
-    And User type a random group code into "GroupCodeField"
-    And I wait for 3 sec
+    And I wait for 1 sec
+    And User type group code "NFX911" into "GroupCodeField"
+    And I wait for 1 sec
     And User type a random password into "PasswordRegField"
-    And I wait for 3 sec
+    And I wait for 1 sec
     And User type the same random password into "ConfirmPasswordField"
-    And I wait for 3 sec
+    And I wait for 1 sec
     And User click on submit button "SubmitRegButton"
-    And I wait for 3 sec
+    And I wait for 1 sec
     And User retrieve activation code for email
     And User activate user
 
@@ -121,9 +121,9 @@ Feature: Smoke tests
     And I wait for 3 sec
     And I click on element with xpath "(//mat-select[@role='listbox']/../../../..)[1]"
     And I wait for 3 sec
-    And I scroll to the element with xpath "//mat-option[@role='option']/../..//span[contains(text(), 'NFX007')]/.." with offset 5
+    And I scroll to the element with xpath "//mat-option[@role='option']/../..//span[contains(text(), 'NFX911')]/.." with offset 5
     And I take screenshot
-    And I click on element with xpath "//mat-option[@role='option']/../..//span[contains(text(), 'NFX007')]/.."
+    And I click on element with xpath "//mat-option[@role='option']/../..//span[contains(text(), 'NFX911')]/.."
     And I click on element with xpath "//span[contains(text(),'Select Quiz To Assign')]"
     And I wait for 3 sec
     And I scroll to the element with xpath "(//span[contains(text(),'Geography')]/..)[1]" with offset 5
@@ -138,11 +138,10 @@ Feature: Smoke tests
 
   @Ask_scenario_6
   Scenario: Sign in - Student - Submit
-    Given I open url "http://ask-stage.portnov.com"
-    Then I should see page title contains "Assessment"
-    And I type "example123@email.com" into element with xpath "//input[@formcontrolname='email']"
-    And I type "12345Abc" into element with xpath "//input[@formcontrolname='password']"
-    And I click on element with xpath "//span[contains(text(),'Sign In')]"
+    Given User open url "Ask"
+    And User type email into "EmailField"
+    And User type password into "PasswordField"
+    And User click "SubmitButton"
     Then I wait for element with xpath "//p[contains(text(), 'STUDENT')]" to be present
     Then element with xpath "//p[contains(text(), 'STUDENT')]" should be present
     And I click on element with xpath "//span[contains(text(),'Go To My Assignments')]"
@@ -179,10 +178,10 @@ Feature: Smoke tests
     And I click on element with xpath "//span[contains(text(),'Go To Submissions')]"
     And I click on element with xpath "//div[contains(text(), 'Automatically Graded')]"
     And I wait for 3 sec
-    And I scroll to the element with xpath "(//td[contains(text(), 'NFX007')]/..)[1]" with offset 5
+    And I scroll to the element with xpath "(//td[contains(text(), 'NFX911')]/..)[1]" with offset 5
     And I wait for 3 sec
     And I take screenshot
-    And I click on element with xpath "(//td[contains(text(), 'NFX007')]/..//span[contains(text(), 'Review')]/..)[1]"
+    And I click on element with xpath "(//td[contains(text(), 'NFX911')]/..//span[contains(text(), 'Review')]/..)[1]"
     Then I wait for element with xpath "//div[contains(text(),'ASSESSMENT PASSED')]" to be present
     Then element with xpath "//div[contains(text(),'ASSESSMENT PASSED')]" should be present
     And I take screenshot
